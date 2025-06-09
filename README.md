@@ -89,6 +89,7 @@ earth revolve around the sun
  - Softmax is applied to get probabilities
  - A token is sampled (not argmax) to avoid repetition
  - The sampled token is decoded and appended
+   
 - Important fixes include:
  - Detaching logits from the graph
  - Replacing argmax() with multinomial()
