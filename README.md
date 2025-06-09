@@ -70,10 +70,10 @@ Make sure you have Python ≥ 3.8 installed. Then, install the dependencies:
 
 
 ## How to Run the Notebook
--Open transformers.ipynb in Jupyter Notebook or Google Colab.
--Run all cells sequentially.
--View the generated text after the loop finishes.
--You can modify the prompt or number of tokens to explore different generations.
+- Open transformers.ipynb in Jupyter Notebook or Google Colab.
+- Run all cells sequentially.
+- View the generated text after the loop finishes.
+- You can modify the prompt or number of tokens to explore different generations.
 
 ## Sample Output
 Prompt: earth revolve around
@@ -81,16 +81,16 @@ Generated Text:
 earth revolve around the sun
 
 ## How the Code Works
--The model is loaded using:
+- The model is loaded using:
                           HookedTransformer.from_pretrained("gpt2-small")
--A loop runs 100 times:
- -The input string is tokenized
- -The model generates logits (raw predictions)
- -Softmax is applied to get probabilities
- -A token is sampled (not argmax) to avoid repetition
- -The sampled token is decoded and appended
--Important fixes include:
- -Detaching logits from the graph
- -Replacing argmax() with multinomial()
- -Re-normalizing probabilities to avoid NaNs
+- A loop runs 100 times:
+ - The input string is tokenized
+ - The model generates logits (raw predictions)
+ - Softmax is applied to get probabilities
+ - A token is sampled (not argmax) to avoid repetition
+ - The sampled token is decoded and appended
+- Important fixes include:
+ - Detaching logits from the graph
+ - Replacing argmax() with multinomial()
+ - Re-normalizing probabilities to avoid NaNs
 
