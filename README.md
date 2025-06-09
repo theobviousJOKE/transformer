@@ -84,14 +84,14 @@ earth revolve around the sun
 - The model is loaded using:
                           HookedTransformer.from_pretrained("gpt2-small")
 - A loop runs 100 times:
- - The input string is tokenized
- - The model generates logits (raw predictions)
- - Softmax is applied to get probabilities
- - A token is sampled (not argmax) to avoid repetition
- - The sampled token is decoded and appended
+ -- The input string is tokenized
+ -- The model generates logits (raw predictions)
+ -- Softmax is applied to get probabilities
+ -- A token is sampled (not argmax) to avoid repetition
+ -- The sampled token is decoded and appended
    
 - Important fixes include:
- - Detaching logits from the graph
- - Replacing argmax() with multinomial()
- - Re-normalizing probabilities to avoid NaNs
+ -- Detaching logits from the graph
+ -- Replacing argmax() with multinomial()
+ -- Re-normalizing probabilities to avoid NaNs
 
